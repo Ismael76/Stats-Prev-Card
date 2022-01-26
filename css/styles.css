@@ -1,0 +1,138 @@
+/* Colours */
+
+:root {
+  /* Primary */
+  --vdark-blue: hsl(233, 47%, 7%);
+  --dd-blue: hsl(244, 38%, 16%);
+  --soft-voilet: hsl(285, 77%, 36%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --main-para-white: hsla(0, 0%, 100%, 0.75);
+  --stat-heading-white: hsla(0, 0%, 100%, 0.6);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  background-color: var(--vdark-blue);
+  padding: 1.5rem;
+  line-height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  margin: 0;
+}
+
+.card {
+  background-color: var(--dd-blue);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 1200px;
+}
+
+.card__image-container {
+  background-image: url(/images/image-header-mobile.jpg);
+  width: 100%;
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.card__image-container::after {
+  content: "";
+  background-color: var(--soft-voilet);
+  width: 100%;
+  height: 25rem;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.card__body {
+  text-align: center;
+  padding: 2rem;
+}
+
+.card__title {
+  color: var(--white);
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 3rem;
+  line-height: 35px;
+}
+
+.main-para {
+  color: var(--main-para-white);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.card__stats {
+  line-height: 0.5rem;
+  padding: 2rem;
+}
+
+.card__stats p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--stat-heading-white);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card__title {
+    font-size: 4rem;
+    line-height: 50px;
+  }
+
+  .main-para {
+    font-size: 1.6rem;
+    margin-bottom: 5rem;
+  }
+
+  .card__body {
+    padding: 4.5rem;
+    padding-left: 7rem;
+    text-align: start;
+    order: -1;
+  }
+
+  .card__image-container {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card__image-container::after {
+    height: 100%;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
